@@ -222,16 +222,3 @@ class CVRPTWProblem(BaseProblem):
         for route in routes:
             random.shuffle(route)
         return {"customersSequences": routes}
-
-if __name__ == '__main__':
-    if len(sys.argv) < 2:
-        print("Usage: python cvrptw.py input_file [output_file] [time_limit]")
-        sys.exit(1)
-    instance_file = sys.argv[1]
-    output_file = sys.argv[2] if len(sys.argv) > 2 else None
-    str_time_limit = sys.argv[3] if len(sys.argv) > 3 else "20"
-    # For demonstration: load instance, generate and evaluate a random solution.
-    problem = CVRPTWProblem(instance_file=instance_file)
-    sol = problem.random_solution()
-    obj = problem.evaluate_solution(sol)
-    print("Random solution objective:", obj)
