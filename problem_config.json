@@ -3,14 +3,17 @@
     "default_params": {
       "instance_file": "instances/C101.25.txt"
     },
-    "problem_type": "CVRPTW",
+    "creator": "Rastion",
+    "type": "problem",
+    "problem_name": "Capacitated vehicle routing problem with time windows",
     "description": "In the capacitated vehicle routing problem with time windows (CVRPTW), a fleet of vehicles with uniform capacity must service customers with known demand, service time, and time windows. Each vehicle starts and ends at a common depot. The objectives, in lexicographic order, are to minimize total lateness (penalties for serving customers after their due times and for arriving home after a given maximum horizon), minimize the number of vehicles used, and minimize the total distance traveled.",
+    "link_to_dataset": "https://github.com/Rastion/cvrptw/blob/main/instances/C101.25.txt",
     "keywords": [
       "CVRPTW",
       "vehicle routing",
       "time windows",
       "Solomon instances",
-      "optimization"
+      "route-optimization"
     ],
     "data_format": {
       "instance_file": {
@@ -29,11 +32,8 @@
       "description": "For each route, compute the end time for each customer visit (accounting for travel time and service time), and calculate lateness penalties if a customer is served after its latest end time or if the route returns to depot after the max horizon. Then, combine total lateness, number of vehicles used, and total distance traveled in lexicographic order (using a large multiplier) to form the overall objective."
     },
     "solution_representation": "A dictionary with key 'customersSequences' mapping to a list of lists of integers. Each inner list represents the ordered sequence of customer indices (0-indexed) visited by a vehicle.",
-    "compatible_optimizers": [
-      "genetic_algorithm",
-      "simulated_annealing",
-      "particle_swarm",
-      "tabu_search"
+    "formulations": [
+      ""
     ],
     "notes": "Instances are from the Augerat Set A (e.g., C101.25.txt). Note that customer indices are 0-indexed internally, and the depot is not included in the customer set."
   }
